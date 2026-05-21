@@ -38,6 +38,6 @@ public class ShoppingCart {
             System.out.println("gecersiz islem");
         }
 
-        System.out.println("toplam ucret: " + total);
+        System.out.println("toplam ucret:  " + total);
     }
 }
