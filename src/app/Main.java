@@ -4,6 +4,7 @@ import decorator.BasicCart;
 import decorator.CartComponent;
 import decorator.GiftWrapDecorator;
 import model.ShoppingCart;
+import facade.OrderFacade;
 
 public class Main {
 
@@ -14,7 +15,11 @@ public class Main {
         cart.addProduct("Laptop", 50000);
         cart.addProduct("Mouse", 1000);
 
-        cart.calculateTotal("ogrenci");
+        //cart.calculateTotal("ogrenci");
+
+        OrderFacade orderFacade = new OrderFacade(cart);
+        orderFacade.completeOrder("ogrenci");
+
 
         CartComponent cartDecorator =
                 new GiftWrapDecorator(new BasicCart(1000));
