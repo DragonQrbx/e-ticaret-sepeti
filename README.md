@@ -1,0 +1,1 @@
+D (E-ticaret sepeti) secme nedenim bana yapılması ve gelistirmesi daha kolay geldi.e ticaretede merakım var biraz belki ileride de isime yarar diye dusundum.ozel basım tisort yapıp kendi sitesinde satan bir arkadasım vardı ondan dolayıda merakımı cezbetti bu nedenlede ileride isime yarabilecek bir sistemde calısmak ıstedım.
