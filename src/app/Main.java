@@ -5,6 +5,8 @@ import decorator.CartComponent;
 import decorator.GiftWrapDecorator;
 import model.ShoppingCart;
 import facade.OrderFacade;
+import observer.EmailObserver;
+import observer.OrderSubject;
 
 public class Main {
 
@@ -19,12 +21,19 @@ public class Main {
 
         OrderFacade orderFacade = new OrderFacade(cart);
         orderFacade.completeOrder("ogrenci");
-
+        orderFacade.completeOrder("ogretmen");
 
         CartComponent cartDecorator =
                 new GiftWrapDecorator(new BasicCart(1000));
 
         System.out.println("Decorator toplam fiyat: "
                 + cartDecorator.getTotal());
-    }
+    
+        OrderSubject orderSubject = new OrderSubject();
+
+        orderSubject.addObserver(new EmailObserver());
+
+        orderSubject.notifyObservers("Siparis basariyla olusturuldu.");     
+    
+        }
 }
