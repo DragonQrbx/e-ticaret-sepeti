@@ -19,7 +19,7 @@ public class Main {
 
         OrderFacade orderFacade = new OrderFacade(cart);
         orderFacade.completeOrder("ogrenci");
-
+        orderFacade.completeOrder("ogretmen");
 
         CartComponent cartDecorator =
                 new GiftWrapDecorator(new BasicCart(1000));
