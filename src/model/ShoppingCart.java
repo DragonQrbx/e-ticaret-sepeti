@@ -1,5 +1,8 @@
 package model;
 
+import discount.DiscountFactory;
+import discount.DiscountStrategy;
+
 import java.util.ArrayList;
 
 public class ShoppingCart {
@@ -23,21 +26,11 @@ public class ShoppingCart {
             total += price;
         }
 
-        if (discountType.equals("ogrenci")) {
+        DiscountStrategy strategy =
+                DiscountFactory.createDiscount(discountType);
 
-            total = total * 0.50;
-            System.out.println("ogrenci indirimi uygulandi ");
+        total = strategy.applyDiscount(total);
 
-        } else if (discountType.equals("engelli")) {
-
-            total = total * 0.99;
-            System.out.println("engelli indirimi uygulandı.");
-
-        }  else {
-
-            System.out.println("gecersiz islem");
-        }
-
-        System.out.println("toplam ucret:  " + total);
+        System.out.println("toplam ucret: " + total);
     }
 }
